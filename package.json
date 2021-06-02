@@ -1,10 +1,10 @@
 {
   "name": "@nitedani/create-gcloud-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Quickly create a Google App Engine project",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nitedani/socket.io-react-hooks.git"
+    "url": "https://github.com/nitedani/create-gcloud-app.git"
   },
   "author": {
     "email": "nitedani@gmail.com",
