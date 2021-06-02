@@ -121,10 +121,10 @@ const regionMapping = {
   );
 
   writeFileSync(`${projectName}/.env`, makeEnv(dev));
-  writeFileSync(`${projectName}/.env.prod`, makeEnv(prod));
+  writeFileSync(`${projectName}/.env.production`, makeEnv(prod));
   await exec(`git init ${projectName}`);
   await exec(`git -C ${projectName}/ add .`);
   await exec(`git -C ${projectName}/ commit -m"initial"`);
   console.log("Installing dependencies...");
-  await exec(`cd ${projectName} && npm install --silent`);
+  await exec(`cd ${projectName} && npm install --force --silent`);
 })();
