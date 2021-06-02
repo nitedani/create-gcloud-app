@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const prompts = require("prompts");
 const { exec } = require("promisify-child-process");
 const degit = require("degit");
