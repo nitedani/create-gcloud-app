@@ -1,6 +1,6 @@
 {
   "name": "@nitedani/create-gcloud-app",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Quickly create a Google App Engine project",
   "repository": {
     "type": "git",
@@ -11,8 +11,12 @@
     "name": "Horváth Dániel"
   },
   "main": "index.js",
+  "bin": {
+    "create-gcloud-app": "index.js"
+  },
   "scripts": {
     "create-gcloud-app": "node index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
