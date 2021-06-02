@@ -1,0 +1,25 @@
+{
+  "name": "@nitedani/create-gcloud-app",
+  "version": "1.0.0",
+  "description": "Quickly create a Google App Engine project",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nitedani/socket.io-react-hooks.git"
+  },
+  "author": {
+    "email": "nitedani@gmail.com",
+    "name": "Horváth Dániel"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "degit": "^2.8.4",
+    "fast-csv": "^4.3.6",
+    "promisify-child-process": "^4.1.1",
+    "prompts": "^2.4.1"
+  }
+}
