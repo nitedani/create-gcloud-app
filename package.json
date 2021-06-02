@@ -1,6 +1,6 @@
 {
   "name": "@nitedani/create-gcloud-app",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Quickly create a Google App Engine project",
   "repository": {
     "type": "git",
@@ -12,6 +12,7 @@
   },
   "main": "index.js",
   "scripts": {
+    "create-gcloud-app": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
