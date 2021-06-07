@@ -133,11 +133,11 @@ const regionMapping = {
     `gcloud iam service-accounts keys create ${projectName}/sa-private-key.json --iam-account=${projectName}@appspot.gserviceaccount.com`
   );
 
-  writeFileSync(`${projectName}/.env`, makeEnv(dev));
-  writeFileSync(`${projectName}/.env.production`, makeEnv(prod));
+  writeFileSync(`${projectName}/apps/server/.env`, makeEnv(dev));
+  writeFileSync(`${projectName}/apps/server/.env.production`, makeEnv(prod));
   await exec(`git init ${projectName}`);
-  await exec(`git -C ${projectName}/ add .`);
-  await exec(`git -C ${projectName}/ commit -m"initial"`);
   console.log("Installing dependencies...");
   await exec(`cd ${projectName} && npm install --force --silent`);
+  await exec(`git -C ${projectName}/ add .`);
+  await exec(`git -C ${projectName}/ commit -m"initial"`);
 })();
