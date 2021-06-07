@@ -65,13 +65,13 @@ const regionMapping = {
   );
   console.log("");
   console.log("Add these authorized origins:");
-  console.log("http://localhost:3000");
+  console.log("http://localhost:8080");
   console.log(`https://${projectName}.${regionAbb}.r.appspot.com`);
   console.log("");
   console.log("Add these redirect URIs:");
-  console.log("http://localhost:3000/auth/google/redirect");
+  console.log("http://localhost:8080/api/auth/google/redirect");
   console.log(
-    `https://${projectName}.${regionAbb}.r.appspot.com/auth/google/redirect`
+    `https://${projectName}.${regionAbb}.r.appspot.com/api/auth/google/redirect`
   );
 
   const { clientId } = await prompts({
@@ -91,27 +91,40 @@ const regionMapping = {
   const dev = {
     JWT_SECRET: jwtSecret,
     JWT_EXPIRES_IN: "10d",
+    GOOGLE_AUTH_ENABLED: true,
     OAUTH_GOOGLE_ID: clientId,
     OAUTH_GOOGLE_SECRET: clientSecret,
-    OAUTH_GOOGLE_REDIRECT_URL: "http://localhost:3000/auth/google/redirect",
+    OAUTH_GOOGLE_REDIRECT_URL: "http://localhost:8080/api/auth/google/redirect",
     GCP_SA_KEYFILE: "sa-private-key.json",
+    LOCAL_AUTH_ENABLED: true,
+    LOCAL_SIGNUP_VERIFY: false,
+    SENDGRID_USER: null,
+    SENDGRID_API_KEY: null,
     MAIL_FROM: null,
   };
 
   const prod = {
     JWT_SECRET: jwtSecret,
     JWT_EXPIRES_IN: "10d",
+    GOOGLE_AUTH_ENABLED: true,
     OAUTH_GOOGLE_ID: clientId,
     OAUTH_GOOGLE_SECRET: clientSecret,
-    OAUTH_GOOGLE_REDIRECT_URL: `https://${projectName}.${regionAbb}.r.appspot.com/auth/google/redirect`,
+    OAUTH_GOOGLE_REDIRECT_URL: `https://${projectName}.${regionAbb}.r.appspot.com/api/auth/google/redirect`,
+    LOCAL_AUTH_ENABLED: true,
+    LOCAL_SIGNUP_VERIFY: false,
+    SENDGRID_USER: null,
+    SENDGRID_API_KEY: null,
     MAIL_FROM: null,
   };
 
-  const emitter = degit("git@github.com:nitedani/nestjs-next.js-starter", {
-    cache: false,
-    force: false,
-    verbose: true,
-  });
+  const emitter = degit(
+    "git@github.com:nitedani/nestjs-react-material-starter",
+    {
+      cache: false,
+      force: false,
+      verbose: true,
+    }
+  );
 
   console.log("Scaffolding project...");
   await emitter.clone(projectName);
